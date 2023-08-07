@@ -8,3 +8,5 @@ while n!=0:
         ans += str(a)
     n //= b
 print(ans[::-1])
+
+
