@@ -1,17 +1,12 @@
-import sys
-T = int(sys.stdin.readline())
-
-def fibo(n):
-    count0 = 0
-    count1 = 0
-    if n == 0:
-        count0 +=1
-        return 0
-    elif n == 1:
-        count1 +=1
-        return 1
-    else:
-        return fibo(n-1) + fibo(n-2)
-for i in range(T):
-    a = int(sys.stdin.readline())
-    print(fibo(a),count0)
+t = int(input())
+ 
+for _ in range(t):
+    cnt_0 = [1,0]
+    cnt_1 = [0,1]
+    n = int(input())
+    if n>1:
+        for i in range(n-1):
+            cnt_0.append(cnt_1[-1])
+            cnt_1.append(cnt_0[-2]+cnt_1[-1]) 
+ 
+    print(cnt_0[n], cnt_1[n])
