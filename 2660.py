@@ -10,7 +10,7 @@ for i in range(l):
   a,b = map(int,sys.stdin.readline().split())
   graph[a] += [b]
   graph[b] += [a]
-  
+
 visited[1] = 1
 q = deque()
 q.append(1)
