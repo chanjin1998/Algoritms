@@ -1,4 +1,2 @@
-import sys
-a,b = map(int,sys.stdin.readline().split())
-
-print(a*(b-1)+1)
+key = 20171581 * 17 % 173729
+print(key)
