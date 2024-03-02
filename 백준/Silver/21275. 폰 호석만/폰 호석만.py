@@ -26,7 +26,10 @@ for i in range(2, 37):
 
 # 4. 출력하기
 if count == 1:
-    print(x,a,b)
+    if x >= pow(2,63) or x<0 or a==b:
+      print("Impossible")
+    else:
+      print(x,a,b)
 elif count == 0:
     print("Impossible")
 else:
