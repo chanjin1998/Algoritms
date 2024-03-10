@@ -8,3 +8,4 @@ for i in range(0,x-1):
 day = (day + y)%7
 print(days[day])
 #print
+#print
