@@ -19,7 +19,7 @@ for _ in range(r):
 
         for j in range(i + 1, m - i):  #하
             y = j
-            prev_value = data[x][y]aa
+            prev_value = data[x][y]aaaa
             data[x][y] = temp
             temp = prev_value
 
