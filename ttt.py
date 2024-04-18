@@ -19,3 +19,4 @@ def four_squares(n):
 
 n = int(sys.stdin.readline())
 print(four_squares(n))
+#print(aa)
