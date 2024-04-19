@@ -105,3 +105,4 @@ if res > T:
 else:
     print(res)
 #print(a)
+#print(a)
