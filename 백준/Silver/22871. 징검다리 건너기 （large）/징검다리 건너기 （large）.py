@@ -1,34 +1,12 @@
-import sys
-input = sys.stdin.readline
-
+INF = 999999999
 n = int(input())
-stone = [0] + list(map(int, input().split()))
-s, e, r = 1, (n-1) * (1 + abs(stone[n] - stone[1])), 0
+A = list(map(int, input().split()))
 
-while s <= e:
-    m = (s + e) // 2
-    flag = 0
-    stack = [1]
-    v = [False]*(n+1)
-    v[1] = True
-    
-    while stack:
-        k = stack.pop()
+dp = [0] + [INF] * (n - 1)
 
-        if k == n:
-            flag = 1
-            break
+for i in range(1, n):
+    for j in range(0, i):
+        power = max((i - j) * (1 + abs(A[i] - A[j])), dp[j]) 
+        dp[i] = min(dp[i], power)
 
-        for i in range(k + 1, n + 1):
-            p = (i - k) * (1 + abs(stone[i] - stone[k]))
-            if p <= m and not v[i]:
-                stack.append(i)
-                v[i] = True
-
-    if flag:
-        e = m - 1
-        r = m
-    else:
-        s = m + 1
-
-print(r)
+print(dp[-1])
